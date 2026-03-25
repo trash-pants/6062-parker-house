@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6062 Parker House</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #c8a882;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-wrapper {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 260px;
+      animation: spin 10s linear infinite;
+      transform-origin: center;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="orbit-wrapper">
+
+    <!-- Orbiting text on a circular path -->
+    <svg class="orbit-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Circle path centered at 130,130 with radius 115 -->
+        <path id="orbitPath" d="
+          M 130,15
+          A 115,115 0 1,1 129.999,15
+        " />
+      </defs>
+      <text
+        font-family="Georgia, serif"
+        font-size="15"
+        fill="#3a2a0a"
+        letter-spacing="8"
+        font-weight="bold"
+        opacity="0.22"
+      >
+        <textPath href="#orbitPath" startOffset="0%">
+          6062 PARKER HOUSE
+        </textPath>
+      </text>
+    </svg>
+
+    <!-- Smiley face -->
+    <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" fill="#FFD700" stroke="#c8860a" stroke-width="4"/>
+      <circle cx="70" cy="78" r="12" fill="#3a2a0a"/>
+      <circle cx="130" cy="78" r="12" fill="#3a2a0a"/>
+      <path d="M 55 115 Q 100 160 145 115" fill="none" stroke="#3a2a0a" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+
+  </div>
+</body>
+</html>
